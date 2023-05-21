@@ -6,7 +6,7 @@ import Message from "./message/Message";
 import ReactScrollToBottom from "react-scroll-to-bottom"
 import closeIcon from "../assets/closeIcon.png"
 
-const ENDPOINT = 'http://localhost:8000'
+const ENDPOINT = 'https://realtimechatapp-h1l6.onrender.com'
 let socket;
 
 const Chat = () => {

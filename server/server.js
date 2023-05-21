@@ -7,7 +7,11 @@ import { Server } from 'socket.io';
 // creating express app and connect to socket io
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server, {
+    cors: {
+        origin: "*",
+    }
+});
 
 // Middle Ware
 dotenv.config();
@@ -17,7 +21,6 @@ const users = [{}];
 
 // Run when client connects
 io.on('connect', (socket) => {
-    console.log('Connected');
 
     socket.on('joined', ({ user }) => {
         users[socket.id] = user;
